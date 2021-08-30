@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { i18n } from '../../lib/i18n/i18n';
 import { ModalName } from '../headers/AppHeader';
 import SmallModal from '../modals/SmallModal';
 
@@ -41,10 +42,10 @@ const QuestionModal: FC<QuestionModalProps> = ({ onClose, onSelect }) => {
       <List>
         <Link to="/?subpage=help">
           <a onClick={onClose}>
-            <li>Q&A</li>
+            <li>{i18n('Q&A')}</li>
           </a>
         </Link>
-        <li onClick={() => onSelect('changelog')}>Changelog</li>
+        <li onClick={() => onSelect('changelog')}>{i18n('Changelog')}</li>
       </List>
     </SmallModal>
   );

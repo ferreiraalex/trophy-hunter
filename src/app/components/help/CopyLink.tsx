@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { copyTextToClipboard } from '../../lib/utils/clipboard';
 import FancyButton from '../common/FancyButton';
+import { i18n } from '../../lib/i18n/i18n';
 
 const CopyContainer = styled.div`
   min-width: 270px;
@@ -15,7 +16,7 @@ const CopyContainer = styled.div`
     color: #eaeaea;
   }
 
-  ${FancyButton} {
+  button {
     margin: 0;
     padding: 8px 16px;
     min-width: 6.5em;
@@ -45,7 +46,7 @@ const CopyLink = () => {
         {URL}
       </a>
       <FancyButton onClick={handleClick}>
-        {copied ? 'Copied!' : 'Copy'}
+        {copied ? i18n('Copied!') : i18n('Copy')}
       </FancyButton>
     </CopyContainer>
   );

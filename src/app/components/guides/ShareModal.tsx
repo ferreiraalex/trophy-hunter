@@ -2,6 +2,7 @@ import { FC } from 'react';
 import SmallModal from '../modals/SmallModal';
 import styled from '@emotion/styled';
 import CopyLink from '../help/CopyLink';
+import { i18n } from '../../lib/i18n/i18n';
 
 const WideSmallModal = styled(SmallModal)`
   padding: 15px;
@@ -16,10 +17,10 @@ const ShareModal: FC<ShareModalProps> = ({ onClose }) => {
   return (
     <WideSmallModal
       onClose={onClose}
-      title="Spread the love <3"
+      title={i18n('Spread the love <3')}
       targetId="share"
     >
-      <p>Let your friends join the fun as well!</p>
+      <p>{i18n('Let your friends join the fun as well!')}</p>
       <CopyLink />
     </WideSmallModal>
   );

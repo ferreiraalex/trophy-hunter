@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import { useMutation } from 'react-query';
+import { i18n } from '../../lib/i18n/i18n';
 import { getStatus } from '../../lib/status';
 import Alert from '../icons/Alert';
 import { Tooltip } from '../tooltip';
@@ -46,8 +47,8 @@ const Status: FC = () => {
   return (
     <Tooltip
       placement="topLeft"
-      title="Trophy Hunter API is down"
-      text="Please check Discord for support and updates."
+      title={i18n('Trophy Hunter API is down')}
+      text={i18n('Please check Discord for support and updates.')}
       targetId="alert"
     >
       <Alert data-tooltip-id="alert" />
