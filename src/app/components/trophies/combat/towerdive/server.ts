@@ -24,7 +24,7 @@ const towerdive: TrophyServer = {
       const preFirstTurretDeath = kill.timestamp <= firstTurrentDeath.timestamp;
       const isUnderTurret = isInEnemyTurretRange(
         kill.position,
-        participant.teamId
+        participant.teamId === 100 ? 200 : 100
       );
       const notDiedInThe10SecsBeforeOrAfter = !deaths.find(
         (death) =>

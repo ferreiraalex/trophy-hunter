@@ -22,8 +22,12 @@ import { isAppUpdated } from '../../lib/overwolf';
 import { getLocalStorageItem } from '../../lib/utils/storage';
 import { dict, i18n } from '../../lib/i18n/i18n';
 import LocaleModal from '../i18n/LocaleModal';
+import GitHub from '../icons/GitHub';
 
-const DiscordButtonLink = HeaderButton.withComponent('a');
+const ButtonLink = HeaderButton.withComponent('a');
+const ButtonLinkGitHub = styled(ButtonLink)`
+  padding: 6px;
+`;
 
 const WriteUsFeedback = styled.div`
   font-family: 'Roboto Mono', monospace;
@@ -94,9 +98,15 @@ const AppHeader: FC = () => {
           >
             <img src={`/build/flags/${dict.locale}.png`} alt="Locale" />
           </HeaderButton>
-          <DiscordButtonLink href="https://discord.gg/NTZu8Px" target="_blank">
+          <ButtonLinkGitHub
+            href="https://github.com/lmachens/trophy-hunter"
+            target="_blank"
+          >
+            <GitHub />
+          </ButtonLinkGitHub>
+          <ButtonLink href="https://discord.gg/NTZu8Px" target="_blank">
             <Discord />
-          </DiscordButtonLink>
+          </ButtonLink>
           <HeaderButton
             active={modal === 'share'}
             onClick={openModal('share')}

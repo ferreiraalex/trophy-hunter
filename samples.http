@@ -12,7 +12,7 @@ Content-Type: application/json
     "matchId": 5123274952
 }
 
-### Dev ARAM
+### SR
 POST {{baseUrl}}/dev
 Content-Type: application/json
 
@@ -21,6 +21,18 @@ Content-Type: application/json
     "summonerName": "sirlunchalot619",
     "platformId": "EUW1"
 }
+
+
+### SR
+POST {{baseUrl}}/dev
+Content-Type: application/json
+
+{
+    "matchId": 5438288831,
+    "summonerName": "Aprikose1",
+    "platformId": "EUW1"
+}
+
 
 ### Dev Summoner's Rift
 POST {{baseUrl}}/dev

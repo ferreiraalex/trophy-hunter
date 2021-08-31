@@ -98,33 +98,33 @@ export const calcLevel = (
 
 export const TURRET_POSITIONS_BY_TEAM = {
   100: [
-    [10504, 1029],
-    [981, 10441],
-    [6919, 1483],
-    [4281, 1253],
-    [5846, 6396],
-    [5048, 4812],
-    [3651, 3696],
-    [2177, 1807],
-    [1748, 2270],
-    [1512, 6699],
-    [1169, 4287],
+    [981, 10441], // BLUE_TOP_LANE_OUTER_TURRET
+    [1512, 6699], // BLUE_TOP_LANE_INNER_TURRET
+    [1169, 4287], // BLUE_TOP_LANE_BASE_TURRET
+    [5846, 6396], // BLUE_MID_LANE_OUTER_TURRET
+    [5048, 4812], // BLUE_MID_LANE_INNER_TURRET
+    [3651, 3696], // BLUE_MID_LANE_BASE_TURRET
+    [10504, 1029], // BLUE_BOT_LANE_OUTER_TURRET
+    [6919, 1483], // BLUE_BOT_LANE_INNER_TURRET
+    [4281, 1253], // BLUE_BOT_LANE_BASE_TURRET
+    [1748, 2270], // BLUE_TOP_LANE_NEXUS_TURRET
+    [2177, 1807], // BLUE_BOT_LANE_NEXUS_TURRET
   ],
   200: [
-    [13866, 4505],
-    [8955, 8510],
-    [9767, 10113],
-    [11134, 11207],
-    [4318, 13875],
-    [7943, 13411],
-    [10481, 13650],
-    [12611, 13084],
-    [13052, 12612],
-    [13327, 8226],
-    [13624, 10572],
+    [4318, 13875], // RED_TOP_LANE_OUTER_TURRET
+    [7943, 13411], // RED_TOP_LANE_INNER_TURRET
+    [10481, 13650], // RED_TOP_LANE_BASE_TURRET
+    [8955, 8510], // RED_MID_LANE_OUTER_TURRET
+    [9767, 10113], // RED_MID_LANE_INNER_TURRET
+    [11134, 11207], // RED_MID_LANE_BASE_TURRET
+    [13866, 4505], // RED_BOT_LANE_OUTER_TURRET
+    [13327, 8226], // RED_BOT_LANE_INNER_TURRET
+    [13624, 10572], // RED_BOT_LANE_BASE_TURRET
+    [12611, 13084], // RED_TOP_LANE_NEXUS_TURRET
+    [13052, 12612], // RED_BOT_LANE_NEXUS_TURRET
   ],
 };
-export const TURRET_RANGE = 500;
+export const TURRET_RANGE = 850;
 export const BUFF_POSITIONS = [
   [7700, 3800],
   [3600, 8000],
@@ -138,13 +138,14 @@ export const isInEnemyTurretRange = (
 ): boolean => {
   const turretPositions = TURRET_POSITIONS_BY_TEAM[teamId];
 
-  return turretPositions.some(
-    (turretPosition) =>
+  return turretPositions.some((turretPosition) => {
+    return (
       Math.sqrt(
         Math.pow(position.x - turretPosition[0], 2) +
           Math.pow(position.y - turretPosition[1], 2)
       ) <= TURRET_RANGE
-  );
+    );
+  });
 };
 
 export const getParticipantByAccount = (

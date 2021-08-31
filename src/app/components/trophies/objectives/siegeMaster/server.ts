@@ -13,7 +13,7 @@ const siegeMaster: TrophyServer = {
     const underTurretKills = kills.filter((kill) => {
       const isUnderTurret = isInEnemyTurretRange(
         kill.position,
-        participant.teamId
+        participant.teamId === 100 ? 200 : 100
       );
 
       return isUnderTurret;
