@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.section`
   margin-top: 48px;
@@ -41,26 +42,26 @@ const EpicSummary = styled.summary`
 const Help = () => {
   return (
     <Container>
-      <h2>Welcome to Trophy Hunter</h2>
+      <h2>{i18n('Welcome to Trophy Hunter')}</h2>
       <Content>
-        <h3>What is Trophy Hunter?</h3>
+        <h3>{i18n('What is Trophy Hunter?')}</h3>
         <p>
-          Trophy Hunter is a new achievement app for League of Legends, it
-          allows you to hunt for new crystals on Hunteria Islands, challenge
-          yourself and strive to rule over them all, become the ultimate Trophy
-          Hunter!
+          {i18n(
+            'Trophy Hunter is a new achievement app for League of Legends, it allows you to hunt for new crystals on Hunteria Islands, challenge yourself and strive to rule over them all, become the ultimate Trophy Hunter!'
+          )}
         </p>
         <p>
-          Each challenge island has 5 difficulty levels, from beginner to pro.
-          Find the best for you, you may find that your emotional and
-          intellectual skills improve along with your core abilities.
+          {i18n(
+            'Each challenge island has 5 difficulty levels, from beginner to pro. Find the best for you, you may find that your emotional and intellectual skills improve along with your core abilities.'
+          )}
         </p>
         <details>
-          <CombatSummary>Main Features</CombatSummary>
+          <CombatSummary>{i18n('Main Features')}</CombatSummary>
           <ul>
             <li>
-              Over 200 different trophies to achieve, all with unique abilities
-              and skills.
+              {i18n(
+                'Over 200 different trophies to achieve, all with unique abilities and skills.'
+              )}
             </li>
             <li>
               Over 80 live progress trophies, so that you never miss a trophy
