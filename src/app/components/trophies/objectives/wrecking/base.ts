@@ -1,11 +1,12 @@
+import { i18n } from '../../../../lib/i18n/i18n';
 import { TrophyBase } from '../../types';
 
 const wrecking: TrophyBase = {
   island: 'combat',
   name: 'wrecking',
   level: 'hubObjectives',
-  title: 'Wrecking',
-  description: 'Destroy a turret plate.',
+  title: i18n('Wrecking'),
+  description: i18n('Destroy a turret plate.'),
   category: 'objectives',
 };
 

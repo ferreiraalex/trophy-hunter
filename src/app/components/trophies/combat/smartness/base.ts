@@ -1,12 +1,14 @@
+import { i18n } from '../../../../lib/i18n/i18n';
 import { TrophyBase } from '../../types';
 
 const smartness: TrophyBase = {
   island: 'combat',
   name: 'smartness',
   level: 'combat2',
-  title: 'Smartness',
-  description:
-    'Score a killing spree, at least ten assists and die at most five times.',
+  title: i18n('Smartness'),
+  description: i18n(
+    'Score a killing spree, at least ten assists and die at most five times.'
+  ),
   category: 'combat',
 };
 

@@ -1,3 +1,4 @@
+import { i18n } from '../../../../lib/i18n/i18n';
 import { TrophyBase } from '../../types';
 
 export const SUMMONERS_RIFT_MINUTES = 19;
@@ -7,8 +8,8 @@ const theElephant: TrophyBase = {
   island: 'hub',
   name: 'theElephant',
   level: 'hubTeamwork',
-  title: 'The Elephant',
-  description: `Do not die for more than ${SUMMONERS_RIFT_MINUTES} minutes.\nARAM: ${ARAM_MINUTES} minutes`,
+  title: i18n('The Elephant'),
+  description: i18n('Do not die for more than 19 minutes.\nARAM: 9 minutes'),
   category: 'teamwork',
   aramSupport: true,
 };

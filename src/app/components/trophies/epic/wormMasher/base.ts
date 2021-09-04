@@ -1,12 +1,14 @@
+import { i18n } from '../../../../lib/i18n/i18n';
 import { TrophyBase } from '../../types';
 
 const wormMasher: TrophyBase = {
   island: 'epic',
   name: 'wormMasher',
   level: 'epic2',
-  title: 'Worm Masher',
-  description:
-    'Kill the giant worm called Baron Nashor three times in a match.',
+  title: i18n('Worm Masher'),
+  description: i18n(
+    'Kill the giant worm called Baron Nashor three times in a match.'
+  ),
   category: 'epic',
 };
 

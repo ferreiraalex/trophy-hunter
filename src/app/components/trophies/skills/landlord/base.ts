@@ -1,11 +1,12 @@
+import { i18n } from '../../../../lib/i18n/i18n';
 import { TrophyBase } from '../../types';
 
 const landlord: TrophyBase = {
   island: 'skills',
   name: 'landlord',
   level: 'skills3',
-  title: 'Landlord',
-  description: 'Farm more than 300 minions.',
+  title: i18n('Landlord'),
+  description: i18n('Farm more than 300 minions.'),
   category: 'skills',
 };
 

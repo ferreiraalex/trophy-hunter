@@ -1,3 +1,4 @@
+import { i18n } from '../../../../lib/i18n/i18n';
 import { TrophyBase } from '../../types';
 
 const revenge: TrophyBase = {
@@ -5,7 +6,9 @@ const revenge: TrophyBase = {
   name: 'revenge',
   level: 'combat3',
   title: 'REVENGE!!!',
-  description: 'Kill your killer in the 30 seconds after you have respawned.',
+  description: i18n(
+    'Kill your killer in the 30 seconds after you have respawned.'
+  ),
   category: 'combat',
 };
 

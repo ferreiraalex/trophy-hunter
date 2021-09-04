@@ -18,3 +18,5 @@ const trophies = {
 export default trophies;
 
 export const allTrophies = Object.values(trophies);
+// @ts-ignore
+window.allTrophies = allTrophies;

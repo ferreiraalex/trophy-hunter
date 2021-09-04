@@ -1,11 +1,12 @@
+import { i18n } from '../../../../lib/i18n/i18n';
 import { TrophyBase } from '../../types';
 
 const ancient: TrophyBase = {
   island: 'special',
   name: 'ancient',
   level: 'special4',
-  title: 'Ancient',
-  description: 'Play 500 matches with the trophy hunter app.',
+  title: i18n('Ancient'),
+  description: i18n('Play 500 matches with the trophy hunter app.'),
   category: 'special',
   maxProgress: 500,
   aramSupport: true,
