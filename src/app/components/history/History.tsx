@@ -7,6 +7,7 @@ import Squid from '../icons/Squid';
 import { useAccount } from '../../contexts/account';
 import Button from '../common/Button';
 import Toggle from '../common/Toggle';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.div`
   font-family: Roboto Mono;
@@ -81,7 +82,7 @@ const History = () => {
   return (
     <Container>
       <Label>
-        Only with trophies
+        {i18n('Only with trophies')}
         <Toggle
           checked={onlyWithTrophies}
           onChange={() => setOnlyWithTrophies(!onlyWithTrophies)}
@@ -104,21 +105,21 @@ const History = () => {
                   disabled={!hasNextPage || isFetchingNextPage}
                 >
                   {isFetchingNextPage
-                    ? 'Loading more...'
+                    ? i18n('Loading more...')
                     : hasNextPage
-                    ? 'Load More'
-                    : 'Nothing more to load'}
+                    ? i18n('Load More')
+                    : i18n('Nothing more to load')}
                 </Button>
               </>
             )}
             {!data.pages[0] && (
               <NoMatches>
                 <Squid />
-                <p>No matches found</p>
+                <p>{i18n('No matches found')}</p>
                 <div>
-                  Matches are automatically recorded.
+                  {i18n('Matches are automatically recorded.')}
                   <br />
-                  Please contact us on{' '}
+                  {i18n('Please contact us on')}{' '}
                   <a
                     href="https://discord.gg/NTZu8Px"
                     target="_blank"
@@ -126,7 +127,7 @@ const History = () => {
                   >
                     Discord
                   </a>{' '}
-                  for further assistance.
+                  {i18n('for further assistance.')}
                 </div>
               </NoMatches>
             )}

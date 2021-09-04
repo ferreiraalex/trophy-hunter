@@ -12,6 +12,7 @@ import { useAccount } from '../../contexts/account';
 import { apiEndoint } from '../../lib/utils/runtime';
 import MatchStats from '../matches/MatchStats';
 import { queues } from '../../lib/riot/queues';
+import { i18n } from '../../lib/i18n/i18n';
 
 type Props = {
   match?: HistoryMatch;
@@ -151,13 +152,17 @@ const Match = ({ match }: Props) => {
       </div>
       {match && (
         <div>
-          <Outcome win={match.win}>{match.win ? 'Victory' : 'Defeat'}</Outcome>
+          <Outcome win={match.win}>
+            {match.win ? i18n('Victory') : i18n('Defeat')}
+          </Outcome>
           <Queue>{queues[match.queueId]}</Queue>
         </div>
       )}
       {match && (
         <div>
-          <div>{match.trophyNames.length} Trophies</div>
+          <div>
+            {match.trophyNames.length} {i18n('Trophies')}
+          </div>
           <TrophyIcons trophyNames={match.trophyNames} />
         </div>
       )}
@@ -174,7 +179,7 @@ const Match = ({ match }: Props) => {
             />
           ))}
           {!match.allTrophiesProgress && (
-            <strong>Stats are available since v2.21.0</strong>
+            <strong>{i18n('Stats are available since v2.21.0')}</strong>
           )}
           {match.allTrophiesProgress && (
             <MatchStats allTrophiesProgress={match.allTrophiesProgress} />

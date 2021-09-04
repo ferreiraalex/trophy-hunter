@@ -64,33 +64,35 @@ const Help = () => {
               )}
             </li>
             <li>
-              Over 80 live progress trophies, so that you never miss a trophy
-              you hunt that’s near completion.
+              {i18n(
+                'Over 80 live progress trophies, so that you never miss a trophy you hunt that’s near completion.'
+              )}
             </li>
-            <li>Special trophies to add extra fun to your journey</li>
+            <li>{i18n('Special trophies to add extra fun to your journey')}</li>
             <li>
-              An epic island to challenge the best of the best. Are you up for a
-              challenge?
+              {i18n(
+                'An epic island to challenge the best of the best. Are you up for a challenge?'
+              )}
             </li>
-            <li>Tons of gameplay, plus lots of challenges.</li>
-            <li>Suitable for both casual and hardcore players.</li>
+            <li>{i18n('Tons of gameplay, plus lots of challenges.')}</li>
+            <li>{i18n('Suitable for both casual and hardcore players.')}</li>
             <li>
-              Keeping it fair! We do not support challenges that change your
-              playstyle for the worse!!
+              {i18n(
+                'Keeping it fair! We do not support challenges that change your playstyle for the worse!!'
+              )}
             </li>
           </ul>
         </details>
         <details>
-          <SkillsSummary>How it works</SkillsSummary>
+          <SkillsSummary>{i18n('How it works')}</SkillsSummary>
           <p>
-            Simple! Play LoL Summoner’s Rift and wait for Trophy Hunter to
-            analyze your match. After each match, you will get a list of
-            obtained trophies and you can always see your progress and plan your
-            path in the app.
+            {i18n(
+              'Simple! Play LoL Summoner’s Rift or ARAM and wait for Trophy Hunter to analyze your match. After each match, you will get a list of obtained trophies and you can always see your progress and plan your path in the app.'
+            )}
           </p>
         </details>
         <details>
-          <TeamplaySummary>Follow Us On Social</TeamplaySummary>
+          <TeamplaySummary>{i18n('Follow Us On Social')}</TeamplaySummary>
           <p>
             <a
               href="https://discord.gg/NTZu8Px"
@@ -110,70 +112,83 @@ const Help = () => {
           </p>
         </details>
         <details>
-          <ObjectivesSummary>Do I need to log in to the app?</ObjectivesSummary>
-          <p>
-            The app will sync between your Riot account and the TH app
-            automatically. You only have to log into LoL and run Trophy Hunter.
-          </p>
-        </details>
-        <details>
-          <EpicSummary>What games are supported by the app?</EpicSummary>
-          <p>We currently support League of Legends. Coming soon: TFT LoR</p>
-        </details>
-        <details>
-          <CombatSummary>Which game modes do you support?</CombatSummary>
-          <p>
-            Trophy Hunter Reforged officially supports Ranked Solo/Duo, Normal,
-            and Flex game modes.
-          </p>
-        </details>
-        <details>
-          <SkillsSummary>
-            Which regions does Trophy Hunter Reforged support?
-          </SkillsSummary>
-          <p>
-            Trophy Hunter Reforged supports all regions except PBE and Garena.
-          </p>
-        </details>
-        <details>
-          <TeamplaySummary>
-            Why does Trophy Hunter Reforged not support Garena servers
-            (Philippines, Singapore and Malaysia, Indonesia, Thailand, Taiwan,
-            Vietnam)?
-          </TeamplaySummary>
-          <p>
-            Currently, Riot API does not support Garena, hence we cannot also.
-          </p>
-        </details>
-        <details>
           <ObjectivesSummary>
-            Will I see the progress of other players?
+            {i18n('Do I need to log in to the app?')}
           </ObjectivesSummary>
           <p>
-            At this moment no, community sharing and progress is a feature we
-            currently develop as part of the full app.
+            {i18n(
+              'The app will sync between your Riot account and the TH app automatically. You only have to log into LoL and run Trophy Hunter.'
+            )}
           </p>
         </details>
         <details>
           <EpicSummary>
-            What else do you do with those summoner names and progress?
+            {i18n('What games are supported by the app?')}
           </EpicSummary>
+          <p>{i18n('We currently support League of Legends.')}</p>
+        </details>
+        <details>
+          <CombatSummary>
+            {i18n('Which game modes do you support?')}
+          </CombatSummary>
           <p>
-            Nothing else. We use the information Riot provides all its partners
-            through the API and present it to you.
+            {i18n(
+              'Trophy Hunter Reforged officially supports Ranked Solo/Duo, Normal, Flex and ARAM game modes.'
+            )}
           </p>
         </details>
         <details>
-          <CombatSummary>How can I send you logs?</CombatSummary>
+          <SkillsSummary>
+            {i18n('Which regions does Trophy Hunter Reforged support?')}
+          </SkillsSummary>
           <p>
-            It&apos;s quite simple and takes just a few steps, please follow the
-            instructions{' '}
+            {i18n(
+              'Trophy Hunter Reforged supports all regions except PBE and Garena.'
+            )}
+          </p>
+        </details>
+        <details>
+          <TeamplaySummary>
+            {i18n(
+              'Why does Trophy Hunter Reforged not support Garena servers (Philippines, Singapore and Malaysia, Indonesia, Thailand, Taiwan, Vietnam)?'
+            )}
+          </TeamplaySummary>
+          <p>
+            {i18n(
+              'Currently, Riot API does not support Garena, hence we cannot also.'
+            )}
+          </p>
+        </details>
+        <details>
+          <ObjectivesSummary>
+            {i18n('Will I see the progress of other players?')}
+          </ObjectivesSummary>
+          <p>{i18n('Yes, take a look at the leaderboards')}</p>
+        </details>
+        <details>
+          <EpicSummary>
+            {i18n(
+              'What else do you do with those summoner names and progress?'
+            )}
+          </EpicSummary>
+          <p>
+            {i18n(
+              'Nothing else. We use the information Riot provides all its partners through the API and present it to you.'
+            )}
+          </p>
+        </details>
+        <details>
+          <CombatSummary>{i18n('How can I send you logs?')}</CombatSummary>
+          <p>
+            {i18n(
+              "It's quite simple and takes just a few steps, please follow the instructions"
+            )}{' '}
             <a
               href="https://support.overwolf.com/support/solutions/articles/9000176827-how-to-get-your-overwolf-logs"
               target="_blank"
               rel="noreferrer"
             >
-              here
+              {i18n('here')}
             </a>
             .
           </p>

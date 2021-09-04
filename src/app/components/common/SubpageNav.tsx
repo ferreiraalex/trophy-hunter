@@ -8,6 +8,7 @@ import NavIconButton from './NavIconButton';
 import FancyButton from './FancyButton';
 import useQueryParams from '../../hooks/useQueryParams';
 import { Link } from 'react-router-dom';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Nav = styled.nav`
   display: flex;
@@ -32,11 +33,11 @@ const SubpageNav = () => {
     <Nav onClick={(event) => event.stopPropagation()}>
       {subpage === 'profile' ? (
         <Link to="/?subpage=leaderboard">
-          <BackButton as="a">Back to leaderboard</BackButton>
+          <BackButton as="a">{i18n('Back to leaderboard')}</BackButton>
         </Link>
       ) : (
         <>
-          <Tooltip title="Map" placement="top">
+          <Tooltip title={i18n('Map')} placement="top">
             <div>
               <Link to={`/?subpage=map`}>
                 <NavIconButton as="a" active={subpage === 'map'}>
@@ -45,7 +46,7 @@ const SubpageNav = () => {
               </Link>
             </div>
           </Tooltip>
-          <Tooltip title="Leaderboard" placement="top">
+          <Tooltip title={i18n('Leaderboard')} placement="top">
             <div>
               <Link to={`/?subpage=leaderboard&season=${currentSeason}`}>
                 <NavIconButton as="a" active={subpage === 'leaderboard'}>
@@ -54,7 +55,7 @@ const SubpageNav = () => {
               </Link>
             </div>
           </Tooltip>
-          <Tooltip title="History" placement="top">
+          <Tooltip title={i18n('History')} placement="top">
             <div>
               <Link to={`/?subpage=history`}>
                 <NavIconButton disabled as="a" active={subpage === 'history'}>

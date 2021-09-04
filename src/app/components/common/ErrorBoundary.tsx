@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Component } from 'react';
+import { i18n } from '../../lib/i18n/i18n';
 import { error as logError } from '../../lib/logs';
 import { closeCurrentWindow } from '../../lib/overwolf';
 import FancyButton from './FancyButton';
@@ -42,11 +43,13 @@ class ErrorBoundary extends Component<Props> {
       // You can render any custom fallback UI
       return (
         <Container grid={this.props.grid}>
-          Something went wrong 😒.
+          {i18n('Something went wrong 😒.')}
           {this.props.autoClose ? (
-            <span> Closing window...</span>
+            <span> {i18n('Closing window...')}</span>
           ) : (
-            <FancyButton onClick={() => location.reload()}>Reload</FancyButton>
+            <FancyButton onClick={() => location.reload()}>
+              {i18n('Reload')}
+            </FancyButton>
           )}
         </Container>
       );

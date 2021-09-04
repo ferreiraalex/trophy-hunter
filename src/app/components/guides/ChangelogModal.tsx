@@ -4,6 +4,7 @@ import Markdown from 'markdown-to-jsx';
 import useVersion from '../../hooks/useVersion';
 import styled from '@emotion/styled';
 import usePersistentState from '../../hooks/usePersistentState';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Releases = styled.section`
   hr {
@@ -48,7 +49,9 @@ const ChangelogModal: FC<ChangelogModalProps> = ({ onClose }) => {
       }}
       showAgain={changelogUpdates}
     >
-      <p>Your version: {appVersion}</p>
+      <p>
+        {i18n('Your version')}: {appVersion}
+      </p>
       <Releases>
         {releases?.map((release) => (
           <Fragment key={release.id}>
@@ -58,7 +61,7 @@ const ChangelogModal: FC<ChangelogModalProps> = ({ onClose }) => {
             {release.body ? (
               <Markdown>{release.body}</Markdown>
             ) : (
-              <p>No details 😞</p>
+              <p>{i18n('No details 😞')}</p>
             )}
           </Fragment>
         ))}

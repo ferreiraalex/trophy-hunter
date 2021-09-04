@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { i18n } from '../../lib/i18n/i18n';
 import HeartSquid from '../icons/HeartSquid';
 import CopyLink from './CopyLink';
 
@@ -14,8 +15,8 @@ const Container = styled.section`
 const SpreadTheLove = () => {
   return (
     <Container>
-      <h2>Spread The Love!</h2>
-      <p>Let your friends join the fun as well!</p>
+      <h2>{i18n('Spread the love <3')}</h2>
+      <p>{i18n('Let your friends join the fun as well!')}</p>
       <HeartSquid />
       <CopyLink />
     </Container>
