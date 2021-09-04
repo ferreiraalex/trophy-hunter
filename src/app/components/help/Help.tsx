@@ -42,7 +42,7 @@ const EpicSummary = styled.summary`
 const Help = () => {
   return (
     <Container>
-      <h2>{i18n('Welcome to Trophy Hunter')}</h2>
+      <h2>{i18n('Welcome to Trophy Hunter!')}</h2>
       <Content>
         <h3>{i18n('What is Trophy Hunter?')}</h3>
         <p>

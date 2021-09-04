@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { i18n } from '../../lib/i18n/i18n';
 import { CombatIcon } from '../levels/combat';
 import { EpicIcon } from '../levels/epic';
 import { HubIcon } from '../levels/hub';
@@ -45,7 +46,9 @@ const IslandIcons = ({ islands, className }: Props) => {
         return (
           <Tooltip
             key={island}
-            text={`${island.charAt(0).toUpperCase() + island.slice(1)} Island`}
+            text={`${i18n(
+              island.charAt(0).toUpperCase() + island.slice(1)
+            )} ${i18n('Island')}`}
             placement="top"
           >
             <Icon disabled={!islands.includes(island)} />

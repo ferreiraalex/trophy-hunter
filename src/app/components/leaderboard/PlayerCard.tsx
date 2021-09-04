@@ -6,6 +6,7 @@ import { css } from '@emotion/react';
 import { Ranking } from '../../lib/accounts';
 import { loadingStyle } from '../../styles/animations';
 import { Link } from 'react-router-dom';
+import { i18n } from '../../lib/i18n/i18n';
 
 type Loadable = {
   isLoading: boolean;
@@ -201,13 +202,13 @@ const PlayerCard = ({ size, rank, ranking }: Props) => {
           <TrophiesCount className="trophiesCount" isLoading={!ranking}>
             {ranking && (
               <>
-                {ranking?.trophiesCompleted} <span>Trophies</span>
+                {ranking?.trophiesCompleted} <span>{i18n('Trophies')}</span>
               </>
             )}
           </TrophiesCount>
         )}
         {ranking && size !== 'L' && (
-          <Islands className="islands">Completed</Islands>
+          <Islands className="islands">{i18n('Completed')}</Islands>
         )}
         {ranking?.islands && (
           <IslandsCompleted

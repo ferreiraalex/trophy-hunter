@@ -26,14 +26,15 @@ export function i18n(text: string): string {
 }
 
 export function setDict(locale: string): void {
+  dict = dicts.find((dict) => dict.locale === locale);
   if (typeof localStorage !== 'undefined') {
     localStorage.setItem('locale', locale);
-    dict =
-      dicts.find((dict) => dict.locale === locale) ||
-      dicts.find((dict) => dict.locale === DEFAULT_LOCALE);
   }
 }
 
 export function getLocale(): string {
+  if (typeof localStorage === 'undefined') {
+    return DEFAULT_LOCALE;
+  }
   return localStorage.getItem('locale') || DEFAULT_LOCALE;
 }

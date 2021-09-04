@@ -9,6 +9,7 @@ import useVersion from '../../hooks/useVersion';
 import SummonerSearch from './SummonerSearch';
 import useQueryParams from '../../hooks/useQueryParams';
 import { Link } from 'react-router-dom';
+import { i18n } from '../../lib/i18n/i18n';
 
 const TopPlayers = styled.div`
   display: flex;
@@ -86,7 +87,7 @@ const Leaderboard = () => {
         {seasons.map((season) => (
           <Link key={season} to={`/?subpage=leaderboard&season=${season}`}>
             <Button as="a" active={activeSeason === season}>
-              Season {season}
+              {i18n('Season')} {season}
             </Button>
           </Link>
         ))}
@@ -126,10 +127,10 @@ const Leaderboard = () => {
                   disabled={!hasNextPage || isFetchingNextPage}
                 >
                   {isFetchingNextPage
-                    ? 'Loading more...'
+                    ? i18n('Loading more...')
                     : hasNextPage
-                    ? 'Load More'
-                    : 'Nothing more to load'}
+                    ? i18n('Load More')
+                    : i18n('Nothing more to load')}
                 </Button>
               </>
             )}

@@ -8,6 +8,7 @@ import { useQuery } from 'react-query';
 import useVersion from '../../hooks/useVersion';
 import { useAccount } from '../../contexts/account';
 import useQueryParams from '../../hooks/useQueryParams';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.div`
   background: #2b2a30;
@@ -97,23 +98,25 @@ const LeaderboardOverview = () => {
 
   return (
     <Container>
-      <h3>Season {season}</h3>
+      <h3>
+        {i18n('Season')} {season}
+      </h3>
       <Stats>
         <div>
-          <h4>Your Place</h4>
+          <h4>{i18n('Your Place')}</h4>
           <Rank>#{account?.rank}</Rank>
         </div>
         <div>
-          <h4>Trophies</h4>
+          <h4>{i18n('Trophies')}</h4>
           <div>{trophiesCount}</div>
         </div>
         <div>
-          <h4>Trophies left</h4>
+          <h4>{i18n('Trophies left')}</h4>
           <div>{numberOfTrophies - trophiesCount}</div>
         </div>
       </Stats>
       <label>
-        Trophies completion
+        {i18n('Trophies completion')}
         <ProgressBar
           progress={trophiesCount / numberOfTrophies}
           max={numberOfTrophies}
@@ -122,7 +125,7 @@ const LeaderboardOverview = () => {
         />
       </label>
       <label>
-        Islands completed
+        {i18n('Islands completed')}
         <IslandsCompleted islands={islandsCompleted} />
       </label>
     </Container>

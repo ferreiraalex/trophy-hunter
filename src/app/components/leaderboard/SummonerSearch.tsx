@@ -3,6 +3,7 @@ import { Ranking, rankingBySummonerName } from '../../lib/accounts';
 import PlayerCard from './PlayerCard';
 import styled from '@emotion/styled';
 import useOutsideClick from '../../hooks/useOutsideClick';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.section`
   position: relative;
@@ -59,7 +60,7 @@ const SummonerSearch = ({ season }: SummonerSearchType): JSX.Element => {
         type="text"
         value={summonerName}
         onChange={(event) => setSummonerName(event.target.value)}
-        placeholder="Search summoner"
+        placeholder={i18n('Search summoner')}
       />
       {rankings.length > 0 && (
         <Result ref={resultRef}>
