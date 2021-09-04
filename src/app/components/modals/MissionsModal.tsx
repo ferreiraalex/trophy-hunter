@@ -6,6 +6,7 @@ import TrophyList from '../trophies/TrophyList';
 import TrophyListItem from '../trophies/TrophyListItem';
 import { Account } from '../../lib/accounts';
 import trophies from '../trophies/client';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.div`
   display: grid;
@@ -55,7 +56,7 @@ const MissionsModal = ({ account, onClose }: MissionsModalProps) => {
   return (
     <Modal onClose={onClose}>
       <Container>
-        <Title>Completed missions</Title>
+        <Title>{i18n('Completed missions')}</Title>
         <TrophyList>
           {missionTrophyNames.map((trophyName) => (
             <ListItem
@@ -66,12 +67,14 @@ const MissionsModal = ({ account, onClose }: MissionsModalProps) => {
           ))}
           {missionTrophyNames.length === 0 && (
             <NoTropiesContainer>
-              <p>Oh well, keep on going and you&apos;ll get them next time!</p>
+              <p>
+                {i18n("Oh well, keep on going and you'll get them next time!")}
+              </p>
               <Squid />
             </NoTropiesContainer>
           )}
         </TrophyList>
-        <FancyButton onClick={onClose}>Close</FancyButton>
+        <FancyButton onClick={onClose}>{i18n('Close')}</FancyButton>
       </Container>
     </Modal>
   );

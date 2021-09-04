@@ -4,6 +4,7 @@ import CloseIcon from '../icons/Close';
 import Backdrop from '../common/Backdrop';
 import Checkbox from '../common/Checkbox';
 import FancyButton from '../common/FancyButton';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.div`
   width: 600px;
@@ -78,13 +79,13 @@ const Modal: FC<ModalProps> = ({
           <DontShowAgain>
             <div>
               <Checkbox
-                label="Don't show this again"
+                label={i18n("Don't show this again")}
                 checked={!showAgain}
                 onChange={(event) => onShowAgainChange(!event.target.checked)}
               />
-              <small>*You can always change this in settings</small>
+              <small>{i18n('*You can always change this in settings')}</small>
             </div>
-            <FancyButton onClick={onClose}>Continue</FancyButton>
+            <FancyButton onClick={onClose}>{i18n('Continue')}</FancyButton>
           </DontShowAgain>
         )}
       </Container>

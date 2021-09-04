@@ -13,6 +13,7 @@ import NotificationTitle from './components/notifications/NotificationTitle';
 import NotificationContainer from './components/notifications/NotificationContainer';
 import { log } from './lib/logs';
 import App from './App';
+import { i18n } from './lib/i18n/i18n';
 
 getAppVersion().then((version) => log(`Running ${version}`));
 
@@ -65,8 +66,8 @@ const Notification = () => {
       >
         <NotificationTitle>
           {notification.progress === 1
-            ? 'Achievement completed!'
-            : 'Achievment near completion!'}
+            ? i18n('Trophy completed!')
+            : i18n('Trophy near completion!')}
         </NotificationTitle>
         <Timer onDone={loadNotification} />
       </NotificationHeader>

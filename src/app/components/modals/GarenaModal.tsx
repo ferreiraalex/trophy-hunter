@@ -2,6 +2,7 @@ import Modal from './Modal';
 import styled from '@emotion/styled';
 import Squid from '../icons/Squid';
 import usePersistentState from '../../hooks/usePersistentState';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.div`
   display: grid;
@@ -24,9 +25,9 @@ const GarenaModal = () => {
     <Modal title="Garena is not supported">
       <Container>
         <Text>
-          We are very sorry, but Garena is not supported. There are technical
-          restrictions, which make it impossible to access summoner and match
-          data from Riot.
+          {i18n(
+            'We are very sorry, but Garena is not supported. There are technical restrictions, which make it impossible to access summoner and match data from Riot.'
+          )}
         </Text>
         <Squid />
       </Container>

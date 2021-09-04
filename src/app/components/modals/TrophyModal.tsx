@@ -11,6 +11,7 @@ import { getRecentVersion } from '../../lib/riot';
 import { Tooltip } from '../tooltip';
 import { MAP_LABELS } from '../../lib/riot/helpers';
 import { apiEndoint } from '../../lib/utils/runtime';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.div`
   display: grid;
@@ -77,24 +78,24 @@ const TrophyModal = ({ trophy, onClose }: TrophyModalProps) => {
         </Title>
         <Text>{trophy.description}</Text>
         <section>
-          {isLoading && <p>Loading stats...</p>}
+          {isLoading && <p>{i18n('Loading stats...')}</p>}
           {!isLoading && !trophyStats && (
             <>
-              <p>No stats available</p>
+              <p>{i18n('No stats available')}</p>
               <Squid />
             </>
           )}
           {trophyStats && (
             <>
               <p>
-                {unlockedOrProgress} in{' '}
+                {unlockedOrProgress} {i18n('in')}{' '}
                 <Percentage
                   value={trophyStats.totalCount}
                   max={trophyStats.totalChecks}
                 />{' '}
-                of all matches.
+                {i18n('of all matches.')}
               </p>
-              <h4>Top champions</h4>
+              <h4>{i18n('Top champions')}</h4>
               {trophyStats.top
                 .sort((a, b) => b.count / b.checks - a.count / a.checks)
                 .map(({ championId, championName, mapId, count, checks }) => (
@@ -110,7 +111,11 @@ const TrophyModal = ({ trophy, onClose }: TrophyModalProps) => {
                       />
                     </Tooltip>
                     <Tooltip
-                      text={`${unlockedOrProgress} in ${count} out of ${checks} matches`}
+                      text={`${unlockedOrProgress} ${i18n(
+                        'in'
+                      )} ${count} ${i18n('out of')} ${checks} ${i18n(
+                        'matches'
+                      )}`}
                       placement="top"
                     >
                       <Percentage value={count} max={checks} />
@@ -120,7 +125,7 @@ const TrophyModal = ({ trophy, onClose }: TrophyModalProps) => {
             </>
           )}
         </section>
-        <FancyButton onClick={onClose}>Close</FancyButton>
+        <FancyButton onClick={onClose}>{i18n('Close')}</FancyButton>
       </Container>
     </Modal>
   );

@@ -42,6 +42,7 @@ import { SpecialGradients } from './components/levels/special';
 import SearchingSquid from './components/icons/SearchingSquid';
 import App from './App';
 import { ARAM_HOWLING_ABYSS } from './lib/riot/queues';
+import { i18n } from './lib/i18n/i18n';
 
 getAppVersion().then((version) => log(`Running ${version}`));
 
@@ -217,10 +218,10 @@ const SecondScreen = () => {
       <Header resizable>
         <Status />
         <Grow />
-        <Hotkey hint="Show/Hide" value={showHideHotkey} />
-        <Hotkey hint="Next Page" value={nextPageHotkey} />
+        <Hotkey hint={i18n('Show/Hide')} value={showHideHotkey} />
+        <Hotkey hint={i18n('Next Page')} value={nextPageHotkey} />
         {displays.length > 1 && (
-          <Hotkey hint="Toggle monitor" value={toggleMonitorHotkey} />
+          <Hotkey hint={i18n('Toggle monitor')} value={toggleMonitorHotkey} />
         )}
         <Grow />
         {displays.length > 1 && (
@@ -306,7 +307,7 @@ const SecondScreen = () => {
         {trophies.length === 0 && (
           <Center>
             <SearchingSquid />
-            <p>No trophies to show</p>
+            <p>{i18n('No trophies to show')}</p>
           </Center>
         )}
       </main>

@@ -8,6 +8,7 @@ import NotificationTitle from './components/notifications/NotificationTitle';
 import NotificationContainer from './components/notifications/NotificationContainer';
 import { log } from './lib/logs';
 import App from './App';
+import { i18n } from './lib/i18n/i18n';
 
 getAppVersion().then((version) => log(`Running ${version}`));
 
@@ -26,13 +27,14 @@ const NotSupported = () => {
   return (
     <NotificationContainer>
       <NotificationHeader>
-        <NotificationTitle>Game Mode Unsupported</NotificationTitle>
+        <NotificationTitle>{i18n('Game Mode Unsupported')}</NotificationTitle>
         <Timer onDone={closeCurrentWindow} />
       </NotificationHeader>
       <Message>
         <h3>
-          Trophy Hunter is currently supporting Summoner&apos;s Rift and ARAM
-          only.
+          {i18n(
+            "Trophy Hunter is currently supporting Summoner's Rift and ARAM only."
+          )}
         </h3>
       </Message>
     </NotificationContainer>

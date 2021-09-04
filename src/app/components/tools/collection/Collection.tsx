@@ -17,6 +17,7 @@ import * as skillsTrophies from '../../trophies/skills/client';
 import * as specialTrophies from '../../trophies/special/client';
 import * as teamworkTrophies from '../../trophies/teamwork/client';
 import trophies from '../../trophies/client';
+import { i18n } from '../../../lib/i18n/i18n';
 
 const Items = styled.div`
   display: flex;
@@ -32,10 +33,10 @@ const Collection: FC = () => {
 
   return (
     <>
-      <h2>My Collection</h2>
+      <h2>{i18n('My Collection')}</h2>
       <Items>
         <CollectionItem
-          title="Origin"
+          title={i18n('Origin')}
           Progress={HubProgress}
           trophiesMax={Object.keys(hubTrophies).length}
           trophiesCount={
@@ -47,7 +48,7 @@ const Collection: FC = () => {
           }
         />
         <CollectionItem
-          title="Combat"
+          title={i18n('Combat')}
           Progress={CombatProgress}
           trophiesMax={Object.keys(combatTrophies).length}
           trophiesCount={
@@ -58,7 +59,7 @@ const Collection: FC = () => {
           }
         />
         <CollectionItem
-          title="Skills"
+          title={i18n('Skills')}
           Progress={SkillsProgress}
           trophiesMax={Object.keys(skillsTrophies).length}
           trophiesCount={
@@ -69,7 +70,7 @@ const Collection: FC = () => {
           }
         />
         <CollectionItem
-          title="Teamwork"
+          title={i18n('Teamwork')}
           Progress={TeamworkProgress}
           trophiesMax={Object.keys(teamworkTrophies).length}
           trophiesCount={
@@ -80,7 +81,7 @@ const Collection: FC = () => {
           }
         />
         <CollectionItem
-          title="Objectives"
+          title={i18n('Objectives')}
           Progress={ObjectivesProgress}
           trophiesMax={Object.keys(objectivesTrophies).length}
           trophiesCount={
@@ -91,7 +92,7 @@ const Collection: FC = () => {
           }
         />
         <CollectionItem
-          title="Epic"
+          title={i18n('Epic')}
           Progress={EpicProgress}
           trophiesMax={Object.keys(epicTrophies).length}
           trophiesCount={
@@ -102,7 +103,7 @@ const Collection: FC = () => {
           }
         />
         <CollectionItem
-          title="Special"
+          title={i18n('Special')}
           Progress={SpecialProgress}
           trophiesMax={Object.keys(specialTrophies).length}
           trophiesCount={

@@ -4,6 +4,7 @@ import SettingsButton from './SettingsButton';
 import Toggle from '../common/Toggle';
 import usePersistentState from '../../hooks/usePersistentState';
 import useHotkey from '../../hooks/useHotkey';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Row = styled.div`
   display: flex;
@@ -56,18 +57,18 @@ const Settings: FC = () => {
 
   return (
     <>
-      <h2>Settings</h2>
+      <h2>{i18n('Settings')}</h2>
       <Row>
         <Col>
-          <h3>General</h3>
+          <h3>{i18n('General')}</h3>
           <Setting>
-            Show / Hide hotkey
+            {i18n('Show / Hide hotkey')}
             <SettingsLink href="overwolf://settings/games-overlay?hotkey=show_trophy_hunter&gameId=5426">
               {showTrophyHunterHotkey}
             </SettingsLink>
           </Setting>
           <Setting>
-            Auto Launch
+            {i18n('Auto Launch')}
             <Toggle
               checked={autoLaunch}
               onChange={(event) => {
@@ -76,7 +77,7 @@ const Settings: FC = () => {
             />
           </Setting>
           <Setting>
-            Changelog Updates
+            {i18n('Changelog Updates')}
             <Toggle
               checked={changelogUpdates}
               onChange={(event) => {
@@ -87,9 +88,9 @@ const Settings: FC = () => {
         </Col>
         <Divider />
         <Col>
-          <h3>In-Game Notifications</h3>
+          <h3>{i18n('In-Game Notifications')}</h3>
           <Setting>
-            Trophy near completion
+            {i18n('Trophy near completion')}
             <Toggle
               checked={trophyNearCompletion}
               onChange={(event) => {
@@ -98,7 +99,7 @@ const Settings: FC = () => {
             />
           </Setting>
           <Setting>
-            Trophy completed
+            {i18n('Trophy completed')}
             <Toggle
               checked={trophyCompleted}
               onChange={(event) => {
@@ -109,15 +110,15 @@ const Settings: FC = () => {
         </Col>
         <Divider />
         <Col>
-          <h3>Second Screen</h3>
+          <h3>{i18n('Second Screen')}</h3>
           <Setting>
-            Next page hotkey
+            {i18n('Next page hotkey')}
             <SettingsLink href="overwolf://settings/games-overlay?hotkey=next_page_trophy_hunter&gameId=5426">
               {nextPageHotkey}
             </SettingsLink>
           </Setting>
           <Setting>
-            Toggle monitor hotkey
+            {i18n('Toggle monitor hotkey')}
             <SettingsLink href="overwolf://settings/games-overlay?hotkey=toggle_monitor_trophy_hunter&gameId=5426">
               {toggleMonitorHotkey}
             </SettingsLink>
