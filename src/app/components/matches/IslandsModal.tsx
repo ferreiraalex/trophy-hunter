@@ -15,6 +15,7 @@ import {
 import Slide from '../icons/Slide';
 import styled from '@emotion/styled';
 import { useAccount } from '../../contexts/account';
+import { i18n } from '../../lib/i18n/i18n';
 
 const islands = {
   hub: { Component: HubIsland, title: 'Hub Island' },
@@ -59,8 +60,10 @@ const IslandsModal: FC<IslandsModalProps> = ({
       onClose={onClose}
       title={
         unlockedIslandNames.length === 1
-          ? 'You have unlocked an island!'
-          : `You have unlocked ${unlockedIslandNames.length} islands!`
+          ? i18n('You have unlocked an island!')
+          : `${i18n('You have unlocked')} ${unlockedIslandNames.length} ${i18n(
+              'islands!'
+            )}`
       }
     >
       <Container>

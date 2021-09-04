@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Modal from './Modal';
 import styled from '@emotion/styled';
 import { LOL_ID } from '../../lib/overwolf/constants';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.div`
   display: grid;
@@ -60,20 +61,21 @@ const EnableOverlayModal = () => {
     <Modal>
       <Container>
         <TitleContainer>
-          <h3>Overlay is disabled!</h3>
+          <h3>{i18n('Overlay is disabled!')}</h3>
         </TitleContainer>
         <Text>
-          Trophy Hunter requires you to enable the Overlay for League of Legends
-          in the Overwolf settings to detect your account and matches.
+          {i18n(
+            'Trophy Hunter requires you to enable the Overlay for League of Legends in the Overwolf settings to detect your account and matches.'
+          )}
         </Text>
-        <a href="overwolf://settings">Open Settings</a>
+        <a href="overwolf://settings">{i18n('Open Settings')}</a>
         <img src={`/build/overlay.jpg`} alt="Overwolf overlay settings" />
         <a
           href="https://support.overwolf.com/en/support/solutions/articles/9000178795-overwolf-game-settings"
           target="_blank"
           rel="noreferrer"
         >
-          Read more about Overlay Game settings
+          {i18n('Read more about Overlay Game settings')}
         </a>
       </Container>
     </Modal>

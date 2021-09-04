@@ -5,6 +5,7 @@ import trophies from '../trophies/client';
 import styled from '@emotion/styled';
 import TrophyModal from '../modals/TrophyModal';
 import { TrophyClient } from '../trophies/types';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Table = styled.table`
   width: 100%;
@@ -58,12 +59,12 @@ const MatchStats = ({ allTrophiesProgress }: MatchStatsProps): JSX.Element => {
     <Table>
       <thead>
         <tr>
-          <th>Trophy</th>
-          <th>Progress</th>
+          <th>{i18n('Trophy')}</th>
+          <th>{i18n('Progress')}</th>
         </tr>
         <tr>
           <td colSpan={2}>
-            <strong>Trophies you would have progress in.</strong>
+            <strong>{i18n('Trophies you would have progress in.')}</strong>
           </td>
         </tr>
       </thead>

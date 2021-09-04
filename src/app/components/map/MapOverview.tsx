@@ -13,6 +13,7 @@ import IconButton from '../common/IconButton';
 import Empty from '../icons/Empty';
 import { useTargetAccount } from '../../contexts/account';
 import { useMission } from '../../contexts/account/useMission';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Header = styled.header`
   display: flex;
@@ -85,8 +86,11 @@ const MapOverview = () => {
   return (
     <>
       <Header>
-        <Title>{onlyMissions ? 'Missions' : 'Available'} Trophies</Title>
-        <Tooltip title="Categories" placement="bottomRight">
+        <Title>
+          {onlyMissions ? i18n('Missions') : i18n('Available')}{' '}
+          {i18n('Trophies')}
+        </Title>
+        <Tooltip title={i18n('Categories')} placement="bottomRight">
           <IconButton
             active={categories.length < 7}
             onClick={() => setShowCategories(!showCategories)}
@@ -103,7 +107,7 @@ const MapOverview = () => {
                   ? setCategories([])
                   : setCategories(Object.keys(categoriesMap));
               }}
-              label="Select all"
+              label={i18n('Select all')}
             />
 
             {Object.values(categoriesMap).map(({ value, label, Icon }) => {
@@ -128,7 +132,7 @@ const MapOverview = () => {
             <Backdrop onClick={() => setShowCategories(false)} />
           </Categories>
         )}
-        <Tooltip title="Mission trophies" placement="bottomRight">
+        <Tooltip title={i18n('Mission trophies')} placement="bottomRight">
           <IconButton
             active={onlyMissions}
             onClick={() => {
@@ -144,8 +148,8 @@ const MapOverview = () => {
         {onlyMissions && trophies.length === 0 && (
           <EmptyContainer>
             <Empty />
-            <h2>Nothing here yet</h2>
-            <p>You completed all missions</p>
+            <h2>{i18n('Nothing here yet')}</h2>
+            <p>{i18n('You completed all missions')}</p>
           </EmptyContainer>
         )}
         {trophies.map((trophy) => (

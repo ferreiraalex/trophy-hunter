@@ -13,6 +13,7 @@ import { useAccount } from '../../contexts/account';
 import { TrophyProgress } from '../../lib/matches';
 import MatchStats from './MatchStats';
 import Toggle from '../common/Toggle';
+import { i18n } from '../../lib/i18n/i18n';
 
 const ListItem = styled(TrophyListItem)`
   &:hover {
@@ -67,11 +68,11 @@ const TrophiesModal: FC<TrophiesModalProps> = ({
     <CenteredModal onClose={onClose}>
       <Title>
         {trophyNames.length === 0
-          ? 'No trophies completed this match'
-          : 'Trophies completed in this match, GG!'}
+          ? i18n('No trophies completed this match')
+          : i18n('Trophies completed in this match, GG!')}
       </Title>
       <Label>
-        Show stats
+        {i18n('Show stats')}
         <Toggle checked={showStats} onChange={() => setShowStats(!showStats)} />
       </Label>
       {!showStats && (
@@ -85,7 +86,9 @@ const TrophiesModal: FC<TrophiesModalProps> = ({
           ))}
           {trophyNames.length === 0 && (
             <NoTropiesContainer>
-              <p>Oh well, keep on going and you&apos;ll get them next time!</p>
+              <p>
+                {i18n("Oh well, keep on going and you'll get them next time!")}
+              </p>
               <Squid />
             </NoTropiesContainer>
           )}
@@ -112,7 +115,7 @@ const TrophiesModal: FC<TrophiesModalProps> = ({
           />
         </LottieContainer>
       )}
-      <FancyButton onClick={onClose}>Continue</FancyButton>
+      <FancyButton onClick={onClose}>{i18n('Continue')}</FancyButton>
     </CenteredModal>
   );
 };

@@ -10,6 +10,7 @@ import { flashUntilFocus } from '../../lib/overwolf';
 import TrophiesModal from './TrophiesModal';
 import IslandsModal from './IslandsModal';
 import usePersistentState from '../../hooks/usePersistentState';
+import { i18n } from '../../lib/i18n/i18n';
 
 const Container = styled.div`
   display: flex;
@@ -113,17 +114,23 @@ const AfterMatch: FC<AfterMatchProps> = ({ className }) => {
       )}
       {!showModal && showTooltip && (
         <Tooltip
-          title={loading ? 'Loading Trophies...' : 'Trophies are ready!'}
+          title={
+            loading ? i18n('Loading Trophies...') : i18n('Trophies are ready!')
+          }
           onClick={() => setShowTooltip(false)}
           text={
             loading ? (
-              'It may take a few moments.. we’re loading and concluding your last match to show your progress.'
+              i18n(
+                'It may take a few moments.. we’re loading and concluding your last match to show your progress.'
+              )
             ) : (
               <>
-                <div>All set, want to see the progress you’ve made?</div>
+                <div>
+                  {i18n('All set, want to see the progress you’ve made?')}
+                </div>
                 <ButtonContainer>
                   <ModalButton onClick={() => setShowModal(true)}>
-                    Check now!
+                    {i18n('Check now!')}
                   </ModalButton>
                 </ButtonContainer>
               </>
@@ -138,7 +145,7 @@ const AfterMatch: FC<AfterMatchProps> = ({ className }) => {
         <Backdrop onClick={() => setShowModal(false)}>
           <Container>
             <img src={`/build/logo.png`} />
-            <Message>Loading Trophies...</Message>
+            <Message>{i18n('Loading Trophies...')}</Message>
           </Container>
         </Backdrop>
       )}
