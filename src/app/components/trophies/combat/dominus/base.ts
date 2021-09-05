@@ -7,7 +7,7 @@ const dominus: TrophyBase = {
   level: 'combat7',
   title: i18n('Dominus'),
   description: i18n(
-    'Achieve a 10 cs advantage over your opponent, 3 kills (at least one of them is a solo kill) at 10 minutes into the game.'
+    'Achieve a 10 CS advantage over your opponent and 3 kills (at least one of them is a solo kill) at 10 minutes into the game.'
   ),
   category: 'combat',
 };
