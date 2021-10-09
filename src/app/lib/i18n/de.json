@@ -194,7 +194,7 @@
   "Cloth Armor": "Stoffrüstung",
   "It takes a lot to kill you. On Average you tank more than 10000 damage before going down.": "Es brauch viel dich zu töten. Im Durchschnitt wehrst du über 10000 Schaden ab bevor du stirbst.",
   "Curse": "Fluch",
-  "The total crowd control time that you dealt exceeds 4 seconds per minute.": "Die gesamte Massenkontrollzeit die du verursacht liegt über 4 seconden pro minute.",
+  "The total crowd control time that you dealt exceeds 4 seconds per minute.": "Die gesamte Massenkontrollzeit die du verursacht liegt über 4 Sekunden pro Minute.",
   "Cursed Grounds": "Verfluchter Untergrund",
   "Kill an opponent around a red or blue buff before 10 minutes.": "Töte einen Gegner um einen roten oder blauen Buff vor Minute 10.",
   "Curtain Call": "Letzte Verbeugung",
@@ -655,5 +655,7 @@
   "This trophy doesn't have live-progress tracking": "Dieses Trophäe hat kein Live-Fortschritts-Tracking",
   "This trophy is part of this weeks mission. Mission trophies are shuffled every Sunday and are not part of the trophies count.": "Dieses Trophäe ist Teil der aktuellen Missionen. Missionen-Trophäen werden jeden Sonntag zufällig gewählt und zählen nicht zu dem Trophäen-Fortschritt mit.",
   "Fertilizer": "Dünger",
-  "Reach level 10 before 15 minutes.\nARAM: level 12": "Erreiche Level 10 vor Minute 15.\nARAM: Level 12"
+  "Reach level 10 before 15 minutes.\nARAM: level 12": "Erreiche Level 10 vor Minute 15.\nARAM: Level 12",
+  "Doom": "Verdammung",
+  "The total crowd control time that you dealt exceeds 6 seconds per minute.": "Die gesamte Massenkontrollzeit die du verursacht liegt über 6 Sekunden pro Minute."
 }
